@@ -3,8 +3,8 @@
 Inspired by the paper in reference section (Zarmeba 2016), this project's objective it to experiment with RL (reinforcement learning) and "teach" it to learn to do simple multiplication. 
 
 The code structure is based on:
-1. DDQN approach as documented in A. Oppermann tutorial (see acknowledgement section).  A few adaptation has been to incorporated since the learning in this project versus the "mountainCart" is quite different. 
-2. The code are structure for a set up:
+1. DDQN approach as documented in A. Oppermann tutorial (see acknowledgement section).  A few adaptations have been to incorporated since the learning in this project versus the "mountainCart" is quite different. 
+2. The code is set up for the following:
    - Two two digits multiplication setup (each number can range from 1 to 99)
    - The product of the two operands can be up to four digits
    - each digit can be between 0 and 9
@@ -14,7 +14,7 @@ The code structure is based on:
 
 The environment setup between the RL agent (AI agent) is depicted below. 
 
-[pics](https://github.com/dennylslee/Multiplication-deepRL/blob/master/Multiplication-game-env-setup.png)
+![pics](https://github.com/dennylslee/Multiplication-deepRL/blob/master/Multiplication-game-env-setup.png)
 
 The general strategy for the learning is to learn one digit at a time starting with uniary digit (also called digit1 in the picture). 
 
