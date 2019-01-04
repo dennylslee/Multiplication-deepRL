@@ -38,7 +38,7 @@ NOTE: at the time of writing, this project is NOT considered a success.
 In order to simplify the learning, we start with single digit multiplication.  Even that is proven to be difficult given the small NN and the limitation of a full mesh NN. We started with restricting the random generator to generate either value of 1 or 2.  After some moderate success, we gradually increase the possible range of random number to value of 1, 2, or 3. Thus the product can be 1(1x1), 2 (2x1 or 1x2), 3, 4, 6, 9.  That is, it is a 6 categories classification problem. 
 
 
-# The deficient of the current design and future work
+# The deficiency of the current design and future work
 
 1. The NN is simply treating this as a multi-class classification problem.  It is effectively performing a pattern recognition of numbers based on observing the state and earning the rewards when matches occur.  Possible future enhancement is to use a LSTM based RNN such that sequential information can be learned. 
 2. The state space design does not facilate effective learning. Better state space design improvement is required. 
