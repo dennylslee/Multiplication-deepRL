@@ -39,7 +39,7 @@ NOTE: at the time of writing, this project is NOT considered a success.
 
 In order to simplify the learning, we start with single digit multiplication.  Even that is proven to be difficult given the small NN and the limitation of a full mesh NN. We started with restricting the random generator to generate either value of 1 or 2.  After some moderate success, we gradually increase the possible range of random number to value of 1, 2, 3 or 4. Thus the product can be 1(1x1), 2 (2x1 or 1x2), 3, 4, 6, 9. ... 16  That is, it is a 6 categories classification problem. 
 
-A snipbit of the results look like this (this is the case in which the agent learned well and the prediction are mostly correct on first try)
+A snipbit of what the results look like (this is the case in which the agent learned well and the prediction are mostly correct on first try)
 
 ```
 EPISODE  230
@@ -91,6 +91,9 @@ predicted digits:  [0, 0, 0, 4]  total reward earned:  176.0 end step:  0
 
 ```
 
+The Qmax per epsiode curve is plotted along with the per-epsiode and accumulated rewards are plotted in the following dashboard.  Note that a positive prediction yield a +1 reward whereas each failed prediction yield a negative (e.g. -0.2).
+
+![pics2](https://github.com/dennylslee/Multiplication-deepRL/blob/master/Results_figure.png)
 
 # The deficiency of the current design and future work
 
