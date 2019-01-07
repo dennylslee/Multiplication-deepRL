@@ -31,6 +31,8 @@ The NN within the RL agent (on policy learner) is based on the a fully meshed 3 
 
 Usage of dropout regulation does not seem to have any positive contribution to the result.
 
+NOTE: remember to NOT use activation in the last layer.  Just let it run wide and the Qmax selection will take advantage of it.  I accidently left it in initially and it generates all sort of wreid effects with the softmax squashing.
+
 # Results
 
 NOTE: at the time of writing, this project is NOT considered a success. 
@@ -39,7 +41,7 @@ In order to simplify the learning, we start with single digit multiplication.  E
 
 A snipbit of the results look like this (this is the case in which the agent learned well and the prediction are mostly correct on first try)
 
-'''
+```
 EPISODE  230
 First num: 4 Second num: 4 Product: 16 [0, 0, 1, 6]
 Done status:  False [0, 0, 0, 6]
@@ -87,7 +89,7 @@ First num: 1 Second num: 4 Product: 4 [0, 0, 0, 4]
 Done status:  True [0, 0, 0, 4]
 predicted digits:  [0, 0, 0, 4]  total reward earned:  176.0 end step:  0
 
-'''
+```
 
 
 # The deficiency of the current design and future work
