@@ -35,7 +35,59 @@ Usage of dropout regulation does not seem to have any positive contribution to t
 
 NOTE: at the time of writing, this project is NOT considered a success. 
 
-In order to simplify the learning, we start with single digit multiplication.  Even that is proven to be difficult given the small NN and the limitation of a full mesh NN. We started with restricting the random generator to generate either value of 1 or 2.  After some moderate success, we gradually increase the possible range of random number to value of 1, 2, or 3. Thus the product can be 1(1x1), 2 (2x1 or 1x2), 3, 4, 6, 9.  That is, it is a 6 categories classification problem. 
+In order to simplify the learning, we start with single digit multiplication.  Even that is proven to be difficult given the small NN and the limitation of a full mesh NN. We started with restricting the random generator to generate either value of 1 or 2.  After some moderate success, we gradually increase the possible range of random number to value of 1, 2, 3 or 4. Thus the product can be 1(1x1), 2 (2x1 or 1x2), 3, 4, 6, 9. ... 16  That is, it is a 6 categories classification problem. 
+
+A snipbit of the results look like this (this is the case in which the agent learned well and the prediction are mostly correct on first try)
+
+'''
+EPISODE  230
+First num: 4 Second num: 4 Product: 16 [0, 0, 1, 6]
+Done status:  False [0, 0, 0, 6]
+Done status:  True [0, 0, 1, 6]
+predicted digits:  [0, 0, 1, 6]  total reward earned:  164.4 end step:  1
+EPISODE  231
+First num: 4 Second num: 2 Product: 8 [0, 0, 0, 8]
+Done status:  True [0, 0, 0, 8]
+predicted digits:  [0, 0, 0, 8]  total reward earned:  165.4 end step:  0
+EPISODE  232
+First num: 3 Second num: 1 Product: 3 [0, 0, 0, 3]
+Done status:  True [0, 0, 0, 3]
+predicted digits:  [0, 0, 0, 3]  total reward earned:  166.4 end step:  0
+EPISODE  233
+First num: 4 Second num: 4 Product: 16 [0, 0, 1, 6]
+Done status:  False [0, 0, 0, 6]
+Done status:  True [0, 0, 1, 6]
+predicted digits:  [0, 0, 1, 6]  total reward earned:  168.4 end step:  1
+EPISODE  234
+First num: 1 Second num: 4 Product: 4 [0, 0, 0, 4]
+Done status:  True [0, 0, 0, 4]
+predicted digits:  [0, 0, 0, 4]  total reward earned:  169.4 end step:  0
+EPISODE  235
+First num: 2 Second num: 1 Product: 2 [0, 0, 0, 2]
+Done status:  True [0, 0, 0, 2]
+predicted digits:  [0, 0, 0, 2]  total reward earned:  170.4 end step:  0
+EPISODE  236
+First num: 4 Second num: 3 Product: 12 [0, 0, 1, 2]
+Done status:  False [0, 0, 0, 8]
+Done status:  False [0, 0, 0, 2]
+Done status:  True [0, 0, 1, 2]
+predicted digits:  [0, 0, 1, 2]  total reward earned:  172.2 end step:  2
+EPISODE  237
+First num: 4 Second num: 3 Product: 12 [0, 0, 1, 2]
+Done status:  False [0, 0, 0, 8]
+Done status:  False [0, 0, 0, 2]
+Done status:  True [0, 0, 1, 2]
+predicted digits:  [0, 0, 1, 2]  total reward earned:  174.0 end step:  2
+EPISODE  238
+First num: 2 Second num: 4 Product: 8 [0, 0, 0, 8]
+Done status:  True [0, 0, 0, 8]
+predicted digits:  [0, 0, 0, 8]  total reward earned:  175.0 end step:  0
+EPISODE  239
+First num: 1 Second num: 4 Product: 4 [0, 0, 0, 4]
+Done status:  True [0, 0, 0, 4]
+predicted digits:  [0, 0, 0, 4]  total reward earned:  176.0 end step:  0
+
+'''
 
 
 # The deficiency of the current design and future work
