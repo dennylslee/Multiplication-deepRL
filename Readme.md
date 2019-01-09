@@ -91,15 +91,21 @@ predicted digits:  [0, 0, 0, 4]  total reward earned:  176.0 end step:  0
 
 ```
 
-The Qmax per epsiode curve is plotted along with the per-epsiode and accumulated rewards are plotted in the following dashboard.  Note that a positive prediction yield a +1 reward whereas each failed prediction yield a negative (e.g. -0.2).
+The Qmax per epsiode curve is plotted along with the per-epsiode and accumulated rewards are plotted in the following dashboard.  Note that a positive prediction yield a +1 reward whereas each failed prediction yield a negative (e.g. -0.2) in this result below (up to digit value of 4 and 4 as inputs)
 
 ![pics2](https://github.com/dennylslee/Multiplication-deepRL/blob/master/Results_figure.png)
+
+A much larger NN was used as the policy learner here to deal with a digit value of 5 and 5 as inputs. 
+
+![pics3](https://github.com/dennylslee/Multiplication-deepRL/blob/master/Results_figure2.png)
 
 # The deficiency of the current design and future work
 
 1. The NN is simply treating this as a multi-class classification problem.  It is effectively performing a pattern recognition of numbers based on observing the state and earning the rewards when matches occur.  Possible future enhancement is to use a LSTM based RNN such that sequential information can be learned. 
  - the reference (Zaremba 2016) also cited that multipication algorithm requires memory but a feed forward NN has no inherent memory capability. 
 2. The state space design does not facilate effective learning. Better state space design improvement is required. 
+
+For a good summary of why RL is difficult; particular around choice of algo, policy learning,  reward design, convergence, etc.), please see the well written [blog post](https://www.alexirpan.com/2018/02/14/rl-hard.html) on "Deep Reinforcement Learning Doesn't Work Yet" by alexirpan.
 
 # Acknowledgement 
 
